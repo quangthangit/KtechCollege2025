@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="greetingText"></h1>
+</body>
+<script>
+    const greetingText = document.getElementById('greetingText')
+    const date = new Date() 
+    if(date.getHours() < 12) {
+        greetingText.textContent = 'Good Morning'
+    } else if(date.getHours() <18) {
+        greetingText.textContent = 'Good Afternoon'
+    } else {
+        greetingText.textContent = "Good Evening"
+    }
+</script>
+</html>

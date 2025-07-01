@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="password" id="passwordInput" />
+    <input type="checkbox" id="togglePassword" value="Xem mật khẩu" />
+</body>
+<script>
+    const passwordInput = document.getElementById('passwordInput')
+    const togglePassword = document.getElementById('togglePassword')
+    togglePassword.addEventListener('change',()=> {
+        passwordInput.type = togglePassword.checked ? 'text' : 'password'
+    })
+</script>
+</html>

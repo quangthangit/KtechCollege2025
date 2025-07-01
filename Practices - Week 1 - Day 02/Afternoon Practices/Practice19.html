@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="margin-top:24px;">
+        <input type="checkbox" class="optionBox" id="cb1"><label for="cb1">Option 1</label>
+        <input type="checkbox" class="optionBox" id="cb2"><label for="cb2">Option 2</label>
+        <input type="checkbox" class="optionBox" id="cb3"><label for="cb3">Option 3</label>
+        <input type="checkbox" class="optionBox" id="cb4"><label for="cb4">Option 4</label>
+        <div style="margin-top:10px; font-weight:500;">Checked: <span id="checkedCount">0</span></div>
+    </div>
+    <script>
+        const checkboxes = document.querySelectorAll('.optionBox');
+        const checkedCount = document.getElementById('checkedCount');
+        function updateCount() {
+            const count = Array.from(checkboxes).filter(cb => cb.checked).length;
+            checkedCount.textContent = count;
+        }
+        checkboxes.forEach(cb => cb.addEventListener('change', updateCount));
+        updateCount();
+    </script>
+</body>
+
+</html>

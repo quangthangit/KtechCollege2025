@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="emailInput" placeholder="Enter your email"/>
+    <button id="validateBtn" >Check mail</button>
+    <span id="errorMessage"></span>
+</body>
+<script>
+    const emailInput = document.getElementById('emailInput')
+    const validateBtn = document.getElementById('validateBtn')
+    const errorMessage = document.getElementById('errorMessage')
+
+    validateBtn.addEventListener('click' , () => {
+        const email = emailInput.value
+        if (!email) {
+            errorMessage.textContent = 'Email is required'
+            errorMessage.style.color = 'red'
+            return
+        }
+        if (!isValidEmail(email)) {
+            errorMessage.textContent = 'Invalid email format'
+            return
+        }
+        errorMessage.textContent = ''
+        alert('Email is valid: ' + email)
+    })
+
+    function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        return regex.test(email)
+    }
+</script>
+</html>

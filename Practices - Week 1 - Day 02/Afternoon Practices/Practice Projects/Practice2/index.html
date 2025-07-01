@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form UI - Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+  <div class="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Đăng ký thông tin</h2>
+
+    <div class="space-y-4">
+      <div>
+        <label for="fullname" class="block font-medium">Họ và tên đầy đủ *</label>
+        <input type="text" id="fullname" required placeholder="Full Name"
+          class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500" />
+        <div class="text-red-500 text-sm mt-1" id="errorfullname"></div>
+      </div>
+
+      <div>
+        <label for="email" class="block font-medium">E-mail *</label>
+        <input type="email" id="email" required placeholder="Email"
+          class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500" />
+        <div class="text-red-500 text-sm mt-1" id="erroremail"></div>
+      </div>
+
+      <div>
+        <label for="password" class="block font-medium">Mật khẩu *</label>
+        <input type="password" id="password" required placeholder="Password"
+          class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500" />
+        <div class="text-red-500 text-sm mt-1" id="errorpassword"></div>
+      </div>
+
+      <div>
+        <label for="confirmpassword" class="block font-medium">Xác nhận mật khẩu *</label>
+        <input type="password" id="confirmpassword" required placeholder="Confirm Password"
+          class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500" />
+        <div class="text-red-500 text-sm mt-1" id="errorconfirmpassword"></div>
+      </div>
+
+      <div>
+        <label for="tel" class="block font-medium">Số điện thoại *</label>
+        <input type="text" id="tel" required placeholder="Telephone"
+          class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500" />
+        <div class="text-red-500 text-sm mt-1" id="errortel"></div>
+      </div>
+
+      <div>
+        <span class="block font-medium">Giới tính *</span>
+        <div class="flex items-center gap-4 mt-1">
+          <label class="inline-flex items-center gap-1">
+            <input type="radio" id="male" name="gender" value="male" />
+            <span>Nam</span>
+          </label>
+          <label class="inline-flex items-center gap-1">
+            <input type="radio" id="female" name="gender" value="female" />
+            <span>Nữ</span>
+          </label>
+          <label class="inline-flex items-center gap-1">
+            <input type="radio" id="other" name="gender" value="other" />
+            <span>Khác</span>
+          </label>
+        </div>
+        <div class="text-red-500 text-sm mt-1" id="errorgender"></div>
+      </div>
+
+      <div>
+        <label for="date" class="block font-medium">Ngày sinh *</label>
+        <input type="date" id="date" required
+          class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500" />
+        <div class="text-red-500 text-sm mt-1" id="errordate"></div>
+      </div>
+
+      <div>
+        <label for="country" class="block font-medium">Quốc gia *</label>
+        <select id="country" required
+          class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+          <option value="">--Chọn quốc gia--</option>
+          <option value="vn">Việt Nam</option>
+          <option value="us">Mỹ</option>
+          <option value="jp">Nhật Bản</option>
+        </select>
+        <div class="text-red-500 text-sm mt-1" id="errorcountry"></div>
+      </div>
+
+      <div>
+        <span class="block font-medium">Sở thích *</span>
+        <div class="flex flex-wrap gap-4 mt-1">
+          <label class="inline-flex items-center gap-1">
+            <input type="checkbox" id="hobby1" name="hobbies" value="music" />
+            <span>Âm nhạc</span>
+          </label>
+          <label class="inline-flex items-center gap-1">
+            <input type="checkbox" id="hobby2" name="hobbies" value="sport" />
+            <span>Thể thao</span>
+          </label>
+          <label class="inline-flex items-center gap-1">
+            <input type="checkbox" id="hobby3" name="hobbies" value="reading" />
+            <span>Đọc sách</span>
+          </label>
+        </div>
+        <div class="text-red-500 text-sm mt-1" id="errorhobbies"></div>
+      </div>
+
+      <div>
+        <label for="image" class="block font-medium">Ảnh đại diện</label>
+        <input type="file" id="image" accept=".jpg,.jpeg,.png"
+          class="w-full mt-1 p-2 border rounded-md file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-blue-500 file:text-white hover:file:bg-blue-600" />
+        <div class="text-red-500 text-sm mt-1" id="errorimage"></div>
+      </div>
+
+      <div>
+        <label for="bio" class="block font-medium">Tiểu sử / Giới thiệu (tối đa 300 ký tự)</label>
+        <textarea id="bio" maxlength="300" placeholder="Giới thiệu về bạn..."
+          class="w-full mt-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500"></textarea>
+        <div class="text-red-500 text-sm mt-1" id="errorbio"></div>
+      </div>
+
+      <div class="text-center">
+        <button id="btn" type="button"
+          class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-200">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

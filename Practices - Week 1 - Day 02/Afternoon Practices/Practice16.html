@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #boxContainer {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <button id="addBoxBtn">Add Box</button>
+    <div id="boxContainer">
+        <div class="box"></div>
+    </div>
+</body>
+<script>
+    const addBoxBtn = document.getElementById('addBoxBtn')
+    const boxContainer = document.getElementById('boxContainer')
+
+    addBoxBtn.addEventListener('click', () => {
+        const newBox = document.createElement('div')
+        newBox.classList.add('box')
+        boxContainer.appendChild(newBox)
+    })
+</script>
+</html>

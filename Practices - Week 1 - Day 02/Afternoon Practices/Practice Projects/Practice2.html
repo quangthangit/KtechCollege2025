@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            margin: 5px;
+            padding: 20px;
+        }
+
+        h5 {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="fullname" required placeholder="Full Name" />
+        <h5 id="errorfullname"></h5>
+        <input type="text" id="email" required placeholder="Email" />
+        <h5 id="erroremail"></h5>
+        <input type="password" id="password" required placeholder="Password" />
+        <h5 id="error"></h5>
+        <input type="password" id="confirmpassword" required placeholder="Confirm Password" />
+        <h5 id="error"></h5>
+        <input type="text" id="tel" required placeholder="Telephone" />
+        <h5 id="error"></h5>
+        <div>
+            <input type="radio" id="gender" name="gender" value="male" />
+            <label for="gender">Male</label>
+            <input type="radio" id="gender" name="gender" value="female" />
+            <label for="gender">Female</label>
+        </div>
+        <h5 id="error"></h5>
+        <input type="date" id="date" required placeholder="Date of Birth" />
+        <h5 id="error"></h5>
+        <input type="text" id="country" required placeholder="Country" />
+        <h5 id="error"></h5>
+        <input type="text" id="hobbies" placeholder="Hobbies" />
+        <h5 id="error"></h5>
+        <input type="file" id="image" required placeholder="Profile Image URL" />
+        <h5 id="error"></h5>
+        <input type="text" id="bio" required placeholder="Short Bio" />
+        <h5 id="error"></h5>
+        <input type="button" id="btn" value="Submit">
+    </div>
+</body>
+<script>
+    const fullname = document.getElementById('fullname');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const confirmpassword = document.getElementById('confirmpassword');
+    const tel = document.getElementById('tel');
+    const gender = document.getElementById('gender');
+    const date = document.getElementById('date');
+    const country = document.getElementById('country');
+    const hobbies = document.getElementById('hobbies');
+    const image = document.getElementById('image');
+    const bio = document.getElementById('bio');
+    const btn = document.getElementById('btn');
+
+    function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        return regex.test(email)
+    }
+
+    btn.addEventListener('click', () => {
+        if (fullname.value.trim() === '' || fullname.value.length < 3) {
+            document.getElementById('errorfullname').textContent = 'Full Name is required';
+            document.getElementById('errorfullname').style.color = 'red'
+        }
+        if (fullname.value.length < 3) {
+            document.getElementById('errorfullname').textContent = 'Full Name must be at least 3 characters long';
+            document.getElementById('errorfullname').style.color = 'red'
+        }
+        if (!isValidEmail(email.value)) {
+            document.getElementById('erroremail').textContent = 'Invalid email format';
+            document.getElementById('erroremail').style.color = 'red';
+        }
+
+    });
+
+</script>
+
+</html>
