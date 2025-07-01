@@ -1,0 +1,91 @@
+:root {
+    --background-color: #F4F7FC;
+    --spacing: 16px;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-radius: 4px;
+
+    --title-color: #333333;
+    --count-color: #00c0ef;
+}
+
+
+.container {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.sub-container {
+    display: flex;
+    padding: 20px;
+    background-color: var(--background-color);
+}   
+
+.card {
+  width: 300px;
+  margin: var(--spacing);
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  overflow: hidden;
+  text-align: center;
+  padding: var(--spacing);
+}
+
+.card-header .title {
+  font-size: 13px;
+  color: var(--title-color);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.card-header .count {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--count-color);
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar {
+  width: 20px;
+  height: 60px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 6px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.fill {
+  width: 100%;
+  transition: height 0.3s ease-in-out;
+}
+
+.label {
+  font-size: 11px;
+  color: #666;
+}
+
+.red { background-color: #e74c3c; }
+.green { background-color: #2ecc71; }
+.yellow { background-color: #f1c40f; }
+.cyan { background-color: #00c0ef; }
+.orange { background-color: #e67e22; }

@@ -1,0 +1,148 @@
+:root {
+    --facebook-bg: #5d82d1;
+    --twitter-bg: #2fc2ef;
+    --google-bg: #fd6d4a;
+    --pinterest-bg: #e94d4c;
+    --card-width: 300px;
+    --card-height: 300px;
+    --card-radius: 4px;
+    --icon-size: 60px;
+    --icon-size-mobile: 40px;
+    --title-size: 2rem;
+    --title-size-mobile: 1.3rem;
+    --title-margin-top: 120px;
+    --title-margin-top-mobile: 70px;
+    --desc-size: 1.1rem;
+
+    --facebook-title: "Facebook";
+    --twitter-title: "Twitter";
+    --google-title: "Google +";
+    --pinterest-title: "Pinterest";
+
+    --facebook-title: "Facebook";
+    --twitter-title: "Twitter";
+    --google-title: "Google +";
+    --pinterest-title: "Pinterest";
+
+    --facebook-desc: "5,00,000 Likes";
+    --twitter-desc: "40,000 Tweets";
+    --google-desc: "4,60,000 Plus";
+    --pinterest-desc: "34,000 Pins";
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    margin: 40px 0;
+}
+
+.social-card {
+    width: var(--card-width);
+    height: var(--card-height);
+    border-radius: var(--card-radius);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 32px 24px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.social-card i {
+    position: absolute;
+    top: 32px;
+    left: 24px;
+    font-size: var(--icon-size);
+    opacity: 0.9;
+}
+
+.facebook {
+    background: var(--facebook-bg);
+}
+
+.twitter {
+    background: var(--twitter-bg);
+}
+
+.google {
+    background: var(--google-bg);
+}
+
+.pinterest {
+    background: var(--pinterest-bg);
+}
+
+.social-title {
+    font-size: var(--title-size);
+    font-weight: 400;
+    margin-bottom: 8px;
+    margin-top: var(--title-margin-top);
+}
+
+.social-title::after {
+    content: var(--facebook-title);
+}
+
+.social-desc::after {
+    content: var(--facebook-desc);
+}
+
+.twitter .social-title::after {
+    content: var(--twitter-title);
+}
+
+.twitter .social-desc::after {
+    content: var(--twitter-desc);
+}
+
+.google .social-title::after {
+    content: var(--google-title);
+}
+
+.google .social-desc::after {
+    content: var(--google-desc);
+}
+
+.pinterest .social-title::after {
+    content: var(--pinterest-title);
+}
+
+.pinterest .social-desc::after {
+    content: var(--pinterest-desc);
+}
+
+.social-desc {
+    font-size: var(--desc-size);
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+@media (max-width: 1100px) {
+    .social-container {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .social-card {
+        width: 90vw;
+        max-width: 350px;
+        height: 220px;
+        padding: 24px 16px;
+    }
+
+    .social-card i {
+        font-size: var(--icon-size-mobile);
+        top: 24px;
+        left: 16px;
+    }
+
+    .social-title {
+        margin-top: var(--title-margin-top-mobile);
+        font-size: var(--title-size-mobile);
+    }
+}

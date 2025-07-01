@@ -1,0 +1,128 @@
+:root {
+    --container-width: 540px;
+    --font-family: 'Lato', sans-serif;
+    --font-size: 13px;
+    --font-weight-bold: 700;
+    --color-background: #ecf0f1;
+    --spacing: 16px;
+    --block-height: 54px;
+    --label-width: 160px;
+    --spacing-bottom: 16px;
+    --container-bg-color: #F4F7FC;
+    --image-background: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg");
+
+    --text-color-number: #ffffff;
+    --text-color-name: gray;
+
+    --item-1-primary: #561d1d;
+    --item-1-title: "FOLLOWERS";
+    --item-1-count: "1,2000";
+
+    --item-2-primary: blue;
+    --item-2-title: "FOLLOWINGS";
+    --item-2-count: "1,2000"
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    background-color: var(--container-bg-color);
+}
+
+.sub-container {
+    padding: 20px;
+}
+
+.user-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.user {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    bottom: 0px;
+    padding: 30px;
+}
+
+.user-info {
+    padding: 10px;
+}
+
+.image {
+    background-image: var(--image-background);
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: block;
+}
+
+.item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+    background-color: white;
+}
+
+.item-name-1 {
+    flex: 1;
+    text-align: start;
+    color: var(--text-color-name);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-bold);
+}
+
+.item-number-1 {
+    padding: 10px;
+    background-color: var(--item-1-primary);
+    border-radius: 5px;
+    color: var(--text-color-number);
+    text-align: end;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-bold);
+}
+
+.item-name-1::before {
+    content: var(--item-1-title);
+}
+
+.item-number-1::before {
+    content: var(--item-1-count);
+}
+
+.item-name-2 {
+    flex: 1;
+    text-align: start;
+    color: var(--text-color-name);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-bold);
+}
+
+.item-number-2 {
+    padding: 10px;
+    background-color: var(--item-2-primary);
+    border-radius: 5px;
+    color: var(--text-color-number);
+    text-align: end;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-bold);
+}
+
+.item-name-2::before {
+    content: var(--item-2-title);
+}
+
+.item-number-2::before {
+    content: var(--item-2-count);
+}

@@ -1,0 +1,99 @@
+:root {
+    --container-width: 100%;
+    --font-family: Arial, Helvetica, sans-serif;
+
+    --home-bg-color: red;
+    --home-text: "HOME";
+
+    --about-bg-color: blue;
+    --about-text: "ABOUT";
+
+    --feature-bg-color: green;
+    --feature-text: "FEATURE";
+
+    --service-bg-color: yellow;
+    --service-text: "SERVICE";
+
+    --gallery-bg-color: purple;
+    --gallery-text: "GALLERY";
+
+    --blog-bg-color: orange;
+    --blog-text: "BLOG";
+}
+
+body {
+    width: var(--container-width);
+    margin: 0;
+    font-family: var(--font-family);
+}
+
+.topnav {
+    display: flex;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav a {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    background: #f1f1f1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.topnav a.home {
+    background: var(--home-bg-color);
+    color: white;
+}
+
+.topnav a.home::before {
+    content: var(--home-text);
+}
+
+.topnav a.about {
+    background: var(--about-bg-color);
+    color: white;
+}
+
+.topnav a.about::before {
+    content: var(--about-text);
+}
+
+.topnav a.feature {
+    background: var(--feature-bg-color);
+    color: white;
+}
+
+.topnav a.feature::before {
+    content: var(--feature-text);
+}
+
+.topnav a.service {
+    background: var(--service-bg-color);
+    color: white;
+}
+
+.topnav a.service::before {
+    content: var(--service-text);
+}
+
+.topnav a.gallery {
+    background: var(--gallery-bg-color);
+    color: white;
+}
+
+.topnav a.gallery::before {
+    content: var(--gallery-text);
+}
+
+a.blog {
+    background: var(--blog-bg-color);
+    color: white;
+}
+
+.topnav a.blog::before {
+    content: var(--blog-text);
+}
