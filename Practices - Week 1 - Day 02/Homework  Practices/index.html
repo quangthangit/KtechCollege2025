@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice HomeWork</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+
+<body
+    class="bg-gradient-to-br from-blue-100 to-blue-300 dark:from-gray-900 dark:to-gray-800 min-h-screen flex flex-col m-5 transition-colors duration-300">
+    <div class="w-full max-w-5xl mx-auto mt-5">
+        <div class="dashboard grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div
+                class="rounded-xl shadow-lg p-6 bg-blue-500 text-2xl font-bold text-white flex items-center justify-center min-h-[100px]">
+                DashBoard
+            </div>
+            <div
+                class="rounded-xl shadow-lg p-6 bg-blue-400 font-bold text-white flex items-center justify-center min-h-[100px]">
+                <span id="clock">1:09:36 PM</span>
+            </div>
+            <div id="hi"
+                class=" rounded-xl shadow-lg p-6 bg-blue-300 text-lg font-semibold text-blue-900 flex items-center justify-center min-h-[100px]">
+                Good Afternoon
+            </div>
+            <div id="darkModeToggle"
+                class="rounded-xl shadow-lg p-6 bg-blue-200 text-lg font-semibold text-blue-900 flex items-center justify-center min-h-[100px]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="w-full max-w-5xl mx-auto mt-8 bg-white/80 rounded-xl shadow-lg p-6">
+        <div class="text-center font-bold text-2xl text-blue-700 mb-4">Todo List</div>
+        <form id="todoForm" class="flex flex-col sm:flex-row gap-3 mb-4">
+            <input id="todoInput" type="text" placeholder="Enter a task"
+                class="flex-1 p-4 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-400 outline-none transition" />
+            <button type="submit"
+                class="px-6 py-3 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-700 transition">Submit</button>
+        </form>
+        <div class="flex items-center gap-4">
+            <button type="button" data-filter="all"
+                class="todo-filter-btn px-6 py-3 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-200 transition ring ring-blue-400">All</button>
+            <button type="button" data-filter="completed"
+                class="todo-filter-btn px-6 py-3 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-700 transition">Completed</button>
+            <button type="button" data-filter="incompleted"
+                class="todo-filter-btn px-6 py-3 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-700 transition">Incompleted</button>
+        </div>
+        <ul id="todoList" class="space-y-3 mt-5"></ul>
+    </div>
+    <div class="w-full max-w-5xl mx-auto mt-8 bg-white/80 rounded-xl shadow-lg p-6">
+        <div class="text-center font-bold text-2xl text-blue-700 mb-4">Sticky Notes</div>
+        <form id="noteForm" class="flex flex-col sm:flex-row gap-3 mb-4">
+            <input id="noteInput" type="text" placeholder="Write a note..."
+                class="flex-1 p-4 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-400 outline-none transition" />
+            <button type="submit"
+                class="px-6 py-3 rounded-lg border border-gray-400 font-semibold hover:bg-gray-100 transition">Add
+                Note</button>
+        </form>
+        <div id="noteList" class="flex flex-wrap gap-4"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

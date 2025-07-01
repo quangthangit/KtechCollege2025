@@ -4,6 +4,7 @@ const deleteButton = document.querySelector(".delete");
 const equals = document.querySelector(".equals");
 const result = document.getElementById("result");
 const calculator = document.getElementById("calculator");
+const deleteAll = document.querySelector(".deleteAll");
 
 numbers.forEach((number) => {
   number.addEventListener("click", () => {
@@ -18,7 +19,7 @@ operators.forEach((operator) => {
 });
 
 deleteButton.addEventListener("click", () => {
-  calculator.textContent = "";
+  calculator.textContent = calculator.textContent.substring(0,calculator.textContent.length-1)
   result.textContent = "";
 });
 
@@ -29,3 +30,9 @@ equals.addEventListener("click", () => {
     result.textContent = "Error";
   }
 });
+
+deleteAll.addEventListener("click", () => {
+  calculator.textContent = ""
+  result.textContent = ""
+});
+

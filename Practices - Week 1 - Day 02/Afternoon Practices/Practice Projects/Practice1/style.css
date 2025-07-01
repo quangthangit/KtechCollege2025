@@ -5,6 +5,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: bold;
 }
 
 .container {
@@ -85,7 +86,18 @@ button {
     padding: 18px 0;
 }
 
+.deleteAll {
+    background: #fbeee6;
+    color: #b9770e;
+    padding: 18px 0;
+}
+
 .delete:hover {
+    background: #ffe0b2;
+    transform: translateY(-2px);
+}
+
+.deleteAll:hover {
     background: #ffe0b2;
     transform: translateY(-2px);
 }
