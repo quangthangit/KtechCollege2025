@@ -1,0 +1,52 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 420px;
+    background-color: #fff;
+    border-radius: 28px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    margin: 0 auto;
+}
+
+.row1 {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.time {
+    text-align: start;
+    font-weight: 700;
+    color: red;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
+
+.row2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+}
+
+.goal {
+    background-color: #F6F6F6;
+    padding: 10px;
+    border-radius: 45px;
+}

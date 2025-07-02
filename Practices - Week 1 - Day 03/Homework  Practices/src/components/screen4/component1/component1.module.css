@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  height: 70px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+  gap: 10px;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.text2 {
+  font-size: 14px;
+  color: #76848B;
+}

@@ -1,0 +1,48 @@
+.card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    height: 70px;
+    background-color: #791cf8;
+    border-radius: 9999px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    padding: 50px 30px;
+    box-sizing: border-box;
+}
+
+.avatars {
+    flex: 1;
+    display: flex;
+    margin-right: 20px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 9999px;
+    object-fit: cover;
+    border: 2px solid white;
+    margin-left: -15px;
+    background-color: white;
+}
+
+.avatar:first-child {
+    margin-left: 0;
+}
+
+.text {
+    flex: 1;
+    color: white;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+}
