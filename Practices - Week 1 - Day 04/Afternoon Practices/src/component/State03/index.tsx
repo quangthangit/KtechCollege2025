@@ -44,7 +44,7 @@ const State03 = () => {
       <div className={styles.card}>
         <div className={styles.row1}>
           <span className={styles.title}>Tin mới</span>
-          <span className={styles.subtitle}>Xem thêm</span>
+          <span onClick={()=> setDataPhome([])} className={styles.subtitle}>Xóa tất cả</span>
         </div>
         <div className={styles.row2}>
           {dataPhone.length > 0 &&
