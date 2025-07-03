@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    max-width: 80%;
+    flex-direction: column;
+    margin: 32px auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.08);
+    padding: 30px 30px;
+}
+
+.row1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time {
+    background-color: orangered;
+    padding: 10px 50px;
+    color: #fff;
+    margin-left: 40px;
+    border-radius: 10px;
+}
+
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.viewall {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid #f0f0f0;
+    margin: 18px 0;
+    width: 100%;
+}

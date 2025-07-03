@@ -1,0 +1,44 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 350px;
+    margin: 32px auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.08);
+    padding: 30px 30px;
+}
+
+.button {
+    width: 150px;
+    padding: 10px 40px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.menu {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.item {
+    text-align: center;
+    padding: 10px 40px;
+    width: 150px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.button:hover {
+    background-color: blue;
+    color: white;
+}
+
+.item:hover {
+    background-color: blue;
+    color: white;
+}

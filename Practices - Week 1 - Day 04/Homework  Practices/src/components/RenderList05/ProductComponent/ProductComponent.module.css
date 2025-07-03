@@ -1,0 +1,121 @@
+.card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px 0 rgba(0,0,0,0.07);
+  padding: 18px 14px 16px 14px;
+  max-width: 260px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.discount {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ff7a00;
+  color: #fff;
+  font-weight: bold;
+  padding: 7px 18px;
+  border-radius: 10px;
+  font-size: 1rem;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.shop {
+  font-size: 12px;
+  color: #888;
+  font-weight: 600;
+  margin-top: 6px;
+  letter-spacing: 1px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.cost {
+  color: #43a047;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.costOld {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 1rem;
+}
+
+.discountPercent {
+  color: #e53935;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 2px 0;
+}
+
+.link {
+  color: #1976d2;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 2px 0;
+}
+
+.progressBarWrapper {
+  width: 100%;
+  margin: 4px 0;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #ffd600;
+  border-radius: 6px;
+  transition: width 0.3s;
+}
+
+.sold {
+  font-size: 13px;
+  color: #444;
+  margin-top: 2px;
+}
