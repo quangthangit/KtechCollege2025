@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 const colorMap: Record<string, string> = {
   Vàng: "gold",
   Đỏ: "red",
