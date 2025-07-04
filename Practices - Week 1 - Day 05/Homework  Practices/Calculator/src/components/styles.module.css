@@ -1,0 +1,127 @@
+.body {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    width: 340px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    padding: 32px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+}
+
+h1#calculator,
+h1#result {
+    width: 100%;
+    min-height: 36px;
+    background: #f7fafd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    font-size: 1.3rem;
+    text-align: right;
+    color: #333;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.col_1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    outline: none;
+}
+
+.number {
+    background: #e3f6fc;
+    color: #1a4d6b;
+    padding: 18px 0;
+}
+
+.number:hover {
+    background: #b6e0fe;
+    transform: translateY(-2px);
+}
+
+.operator {
+    background: #ffe0e3;
+    color: #c0392b;
+    padding: 18px 0;
+}
+
+.operator:hover {
+    background: #ffb3ba;
+    transform: translateY(-2px);
+}
+
+.delete {
+    background: #fbeee6;
+    color: #b9770e;
+    padding: 18px 0;
+}
+
+.deleteAll {
+    background: #fbeee6;
+    color: #b9770e;
+    padding: 18px 0;
+}
+
+.delete:hover {
+    background: #ffe0b2;
+    transform: translateY(-2px);
+}
+
+.deleteAll:hover {
+    background: #ffe0b2;
+    transform: translateY(-2px);
+}
+
+.equals {
+    background: #b2f2d7;
+    color: #218c5a;
+    padding: 18px 0;
+    grid-column: span 2;
+}
+
+.equals:hover {
+    background: #63e6be;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 98vw;
+        padding: 10px;
+    }
+
+    h1#calculator,
+    h1#result {
+        font-size: 1rem;
+    }
+}
