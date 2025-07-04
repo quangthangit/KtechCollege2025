@@ -4,7 +4,7 @@ type Props = {
   name: string;
   cost: string;
   imageUrl: string;
-  deleteHandle: React.MouseEventHandler<SVGSVGElement>;
+  deleteHandle: React.MouseEventHandler<HTMLDivElement>;
 };
 
 const ProductComponent = ({
