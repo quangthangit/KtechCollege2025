@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Exercise1 from "./Component/Exercise1";
+import Exercise10 from "./Component/Exercise10";
+import Exercise2 from "./Component/Exercise2";
+import Exercise3 from "./Component/Exercise3";
+import Exercise4 from "./Component/Exercise4";
+import Exercise5 from "./Component/Exercise5";
+import Exercise6 from "./Component/Exercise6";
+import Exercise7 from "./Component/Exercise7";
+import Exercise8 from "./Component/Exercise8";
+import Exercise9 from "./Component/Exercise9";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+      }}
+    >
+      <Exercise1 />
+      <Exercise2 />
+      <Exercise3 />
+      <Exercise4 />
+      <Exercise5 />
+      <Exercise6 />
+      <Exercise7 />
+      <Exercise8 />
+      <Exercise9 />
+      <Exercise10 />
+    </div>
+  );
 }
 
-export default App
+export default App;
