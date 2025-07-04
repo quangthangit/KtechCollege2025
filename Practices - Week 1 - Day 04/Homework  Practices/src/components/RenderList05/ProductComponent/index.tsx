@@ -1,4 +1,4 @@
-import styles from "../ProductComponent/ProductComponent.module.css";
+import styles from "../ProductComponent/styles.module.css";
 
 type Props = {
   cost: string;

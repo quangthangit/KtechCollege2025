@@ -1,4 +1,4 @@
-import styles from "../RenderList05/RenderList05.module.css";
+import styles from "../RenderList05/styles.module.css";
 import ProductComponent from "./ProductComponent";
 
 const products = [

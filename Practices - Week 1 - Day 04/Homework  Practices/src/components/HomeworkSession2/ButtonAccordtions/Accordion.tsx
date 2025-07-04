@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import styles from "../ButtonAccordtions/styles.module.css"
 type Item = {
   title: string;
   content: string;
@@ -26,23 +26,17 @@ const Accordion = ({ items, multiple = false }: AccordionProps) => {
   };
 
   return (
-    <div style={{width : "400px"}}>
+    <div className={styles.card}>
       {items.map((item, idx) => (
-        <div key={idx} style={{ border: "1px solid #eee", marginBottom: 8, borderRadius: 8 }}>
+        <div key={idx} className={styles.item}>
           <div
-            style={{
-              padding: "12px 20px",
-              background: "#f5f5f5",
-              cursor: "pointer",
-              fontWeight: 600,
-              borderRadius: "8px 8px 0 0",
-            }}
+          className={styles.item2}
             onClick={() => handleClick(idx)}
           >
             {item.title}
           </div>
           {openIndexes.includes(idx) && (
-            <div style={{ padding: "16px 20px", background: "#fff" }}>
+            <div className={styles.content}>
               {item.content}
             </div>
           )}

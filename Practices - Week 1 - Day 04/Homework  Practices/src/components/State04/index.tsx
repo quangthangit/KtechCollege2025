@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../State04/State04.module.css";
+import styles from "../State04/styles.module.css";
 
 const State04 = () => {
   const [click, setClick] = useState(false);

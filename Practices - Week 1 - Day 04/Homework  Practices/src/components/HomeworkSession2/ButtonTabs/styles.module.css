@@ -1,0 +1,85 @@
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1000px;
+  font-family: sans-serif;
+}
+
+.tabRow1 {
+  display: flex;
+  background: #f5f5f5;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.tabBtn1 {
+  flex: 1;
+  padding: 16px 30px;
+  background: transparent;
+  color: #444;
+  font-weight: 300;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.active1 {
+  background: #43b96e;
+  color: #fff;
+}
+
+.tabContent1 {
+  margin: 32px 0 40px 0;
+  text-align: center;
+  color: #444;
+  font-size: 18px;
+  line-height: 1.6;
+  min-height: 80px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tabRow2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0;
+  border-bottom: 1.5px solid #eee;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tabBtn2 {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #444;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 12px 0 8px 0;
+  border-bottom: 2.5px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+.active2 {
+  color: #43b96e;
+  font-weight: 700;
+  border-bottom: 2.5px solid #43b96e;
+}
+
+.tabContent2 {
+  margin: 32px 0 0 0;
+  text-align: center;
+  color: #444;
+  font-size: 18px;
+  line-height: 1.6;
+  min-height: 80px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}

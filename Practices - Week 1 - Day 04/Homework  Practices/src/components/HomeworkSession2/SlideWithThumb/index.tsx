@@ -1,28 +1,16 @@
 import { useState } from "react";
+import styles from "../SlideWithThumb/styles.module.css";
 
 const SlideWithThumb = () => {
   const [index, setIndex] = useState(0);
 
   const listImageUrl = [
-    {
-      imageUrl:
-        "https://nhannn87dn.github.io/react-app/block-ui-7-images/1.jpg",
-    },
-    {
-      imageUrl:
-        "https://nhannn87dn.github.io/react-app/block-ui-7-images/2.jpg",
-    },
-    {
-      imageUrl:
-        "https://nhannn87dn.github.io/react-app/block-ui-7-images/1.jpg",
-    },
-    {
-      imageUrl:
-        "https://nhannn87dn.github.io/react-app/block-ui-7-images/2.jpg",
-    },
+    { imageUrl: "https://nhannn87dn.github.io/react-app/block-ui-7-images/1.jpg" },
+    { imageUrl: "https://nhannn87dn.github.io/react-app/block-ui-7-images/2.jpg" },
+    { imageUrl: "https://nhannn87dn.github.io/react-app/block-ui-7-images/1.jpg" },
+    { imageUrl: "https://nhannn87dn.github.io/react-app/block-ui-7-images/2.jpg" },
   ];
 
-  // Sửa logic nút chuyển slide
   const handlePrev = () => {
     setIndex((prev) => (prev === 0 ? listImageUrl.length - 1 : prev - 1));
   };
@@ -31,13 +19,43 @@ const SlideWithThumb = () => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-        <button onClick={handlePrev} style={{ width: "100px", height: "30px" }}>Left</button>
-        <img src={listImageUrl[index].imageUrl} width={400} alt="main" />
-        <button onClick={handleNext} style={{ width: "100px", height: "30px" }}>Right</button>
+    <div className={styles.wrapper}>
+      <div className={styles.mainRow}>
+        <svg
+          onClick={handlePrev}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          height={30}
+          className={styles.arrow}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"
+          />
+        </svg>
+        <img src={listImageUrl[index].imageUrl} width={400} alt="main" className={styles.mainImg} />
+        <svg
+          onClick={handleNext}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          height={30}
+          className={styles.arrow}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
+          />
+        </svg>
       </div>
-      <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+      <div className={styles.thumbRow}>
         {listImageUrl.map((prev, idx) => (
           <img
             onClick={() => setIndex(idx)}
@@ -45,13 +63,7 @@ const SlideWithThumb = () => {
             src={prev.imageUrl}
             key={idx}
             alt={`thumb-${idx}`}
-            style={{
-              border: idx === index ? "3px solid #ff7a00" : "2px solid #eee",
-              borderRadius: 8,
-              cursor: "pointer",
-              opacity: idx === index ? 1 : 0.7,
-              transition: "border 0.2s, opacity 0.2s"
-            }}
+            className={`${styles.thumb} ${idx === index ? styles.active : ""}`}
           />
         ))}
       </div>
