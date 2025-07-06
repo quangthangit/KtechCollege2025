@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: dropdown 0.4s ease forwards;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.title {
+    font-size: 14px;
+    color: #333;
+}
+
+.count {
+    font-weight: bold;
+    color: #d35400;
+}
+
+@keyframes dropdown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

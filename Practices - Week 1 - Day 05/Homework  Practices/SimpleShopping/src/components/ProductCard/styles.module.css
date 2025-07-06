@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: start;
+    background-color: #fff;
+    padding: 10px;
+    justify-content: center;
+    height: 100%;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
+
+.value {
+    font-size: 20px;
+    font-weight: 700;
+    color: green;
+}
+
+.name {
+    font-size: 16px;
+    min-height: 40px;
+    display: flex;
+    padding: 5px;
+}
+
+.ajust {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.ajust_ {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid orange;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
