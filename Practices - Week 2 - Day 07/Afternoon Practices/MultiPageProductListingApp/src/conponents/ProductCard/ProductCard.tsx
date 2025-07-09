@@ -7,9 +7,7 @@ type ProductType = {
 };
 
 const ProductCard = ({ product }: ProductType) => {
-  const { addToCart, cartItems } = useCart();
-  const quantity =
-    cartItems.find((item) => item.id === product.id)?.quantity ?? 0;
+  const { addToCart } = useCart();
   return (
     <div className={styles.card}>
       <img src={product.images[0]} alt={product.title} className={styles.image} />
