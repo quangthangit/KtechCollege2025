@@ -21,13 +21,17 @@ export default function FormRegister() {
     console.log(data);
   };
   return (
-    <div className="min-w-screen min-h-screen flex items-center justify-center font-sans bg-gray-100 text-black">
-      <div className="flex w-[90%] max-w-6xl rounded-lg overflow-hidden shadow-lg">
-        <div className="w-1/2 bg-blue-600 text-white flex flex-col items-center justify-center px-10 py-16">
-          <Lottie animationData={Animation} className="w-full max-w-sm" />
+    <div className="min-w-screen min-h-screen flex items-center justify-center font-sans bg-gray-100 text-black px-2 mt-2 mb-2">
+      <div className="flex flex-col md:flex-row w-full max-w-6xl rounded-lg overflow-hidden shadow-lg">
+        <div className="w-full md:w-1/2 bg-blue-600 text-white flex flex-col items-center justify-center px-6 py-10 md:px-10 md:py-16">
+          <Lottie
+            animationData={Animation}
+            className="w-2/3 sm:w-full max-w-sm"
+          />
           <h1 className="text-lg font-bold text-center mt-6">The boys</h1>
         </div>
-        <div className="w-1/2 bg-white flex items-center justify-center px-8 py-16">
+
+        <div className="w-full md:w-1/2 bg-white flex items-center justify-center px-4 sm:px-6 md:px-8 py-10 md:py-16">
           <form className="w-full max-w-4xl space-y-6">
             <h2 className="text-3xl font-bold text-gray-900">Register</h2>
             <p className="text-gray-500 text-lg font-semibold">
@@ -38,7 +42,7 @@ export default function FormRegister() {
               and begin setting up your profile.
             </p>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <span className="text-black font-bold">First Name</span>
                 <input
@@ -148,7 +152,7 @@ export default function FormRegister() {
               <div>
                 <span className="text-black font-bold">Confirm Password</span>
                 <input
-                type="password"
+                  type="password"
                   {...register("confirmPassword", {
                     required: "Password is required",
                     minLength: {
