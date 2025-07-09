@@ -45,21 +45,21 @@ export const FormLogin = () => {
   };
 
   return (
-    <div className="min-h-screen flex font-sans">
+    <div className="min-h-screen flex flex-col md:flex-row font-sans">
       <ToastContainer />
-      <div className="w-1/2 bg-[#f2f6fa] flex flex-col justify-center items-center p-12">
-        <h1 className="text-4xl font-bold text-[#2b2b2b] leading-tight mb-6">
+      <div className="w-full md:w-1/2 bg-[#f2f6fa] flex flex-col justify-center items-center p-6 md:p-12">
+        <h1 className="text-3xl md:text-4xl font-bold text-[#2b2b2b] leading-tight mb-6 text-center md:text-left">
           Set Your Partner
           <br />
           Recruitment on Auto-Pilot
         </h1>
-        <div className="relative w-[300px] h-[300px]">
-          <Lottie animationData={Animation} className="w-80 h-80" />
+        <div className="relative w-[200px] h-[200px] md:w-[300px] md:h-[300px]">
+          <Lottie animationData={Animation} className="w-full h-full" />
         </div>
       </div>
-      <div className="w-1/2 bg-white flex flex-col justify-center px-12">
-        <div className="max-w-md w-full mx-auto space-y-6">
-          <p className="font-bold text-red-300 text-5xl w-28 mb-[200px]">
+      <div className="w-full md:w-1/2 bg-white flex flex-col justify-center px-6 md:px-12 py-10">
+        <div className="max-w-md w-full mx-auto px-4 md:px-0 space-y-6">
+          <p className="font-bold text-red-300 text-4xl md:text-5xl w-fit mb-10 md:mb-[200px]">
             GROVIA
           </p>
           <h2 className="text-4xl font-bold text-red-600">Login</h2>
@@ -128,7 +128,7 @@ export const FormLogin = () => {
                       {...field}
                       type="password"
                       placeholder="Password"
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+                      className="mt-1 w-full border border-gray-300 p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"
                     />
                     {errors.password && (
                       <p className="text-red-500 text-sm mt-1">
