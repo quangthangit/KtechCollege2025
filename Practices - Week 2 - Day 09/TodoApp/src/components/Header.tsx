@@ -56,22 +56,27 @@ export const Header = () => {
             onClick={() => setMenuOpen(false)}
             className="hover:text-blue-200 transition"
           >
-            Home
+            MyTasks
           </Link>
-          <Link
-            to="/todos"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-blue-200 transition"
-          >
-            My Tasks
-          </Link>
-          <Link
-            to="/profile"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-blue-200 transition"
-          >
-            Profile
-          </Link>
+          {isLogin ? (
+            <button
+              onClick={() => {
+                logOut(), navigate("/login");
+              }}
+              className="flex items-center gap-2 bg-white text-blue-600 font-semibold px-4 py-2 rounded-md hover:bg-gray-100 transition"
+            >
+              <LogOut size={18} />
+              Logout
+            </button>
+          ) : (
+            <button
+              onClick={() => navigate("/login")}
+              className="flex items-center gap-2 bg-white text-blue-600 font-semibold px-4 py-2 rounded-md hover:bg-gray-100 transition"
+            >
+              <LogInIcon size={18} />
+              Login
+            </button>
+          )}
         </div>
       )}
     </header>

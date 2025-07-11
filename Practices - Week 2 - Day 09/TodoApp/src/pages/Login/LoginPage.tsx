@@ -35,7 +35,6 @@ export const LoginPage = () => {
       const result = await response.json();
 
       if (response.ok) {
-        toast.success("Đăng nhập thành công");
         console.log("Login success:", result);
 
         login(result.access_token);
@@ -43,7 +42,7 @@ export const LoginPage = () => {
 
         navigate("/");
       } else {
-        toast.warning("Đăng nhập thất bại");
+        toast.error("Đăng nhập thất bại");
         console.error("Login failed:", result.message || result.error);
       }
     } catch (error) {

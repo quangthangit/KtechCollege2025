@@ -3,26 +3,36 @@ import type { TaskTypes } from "../types/TaskTypes";
 
 type Props = {
   todo: TaskTypes;
+  editTask: (todo : TaskTypes) => void;
 };
 
-export const Task = ({ todo }: Props) => {
+export const Task = ({ todo, editTask }: Props) => {
   const { deleteHandle } = useTask();
+
+  const priorityBg: Record<TaskTypes["priority"], string> = {
+    low: "bg-green-50",
+    medium: "bg-yellow-50",
+    high: "bg-red-50",
+  };
+
+  const statusBadge: Record<TaskTypes["status"], string> = {
+    to_do: "bg-yellow-200 text-yellow-700",
+    in_progress: "bg-blue-200 text-blue-700",
+    done: "bg-green-200 text-green-700",
+  };
+
+  const statusLabel: Record<TaskTypes["status"], string> = {
+    to_do: "To Do",
+    in_progress: "In Progress",
+    done: "Done",
+  };
+
   return (
-    <li
-      className={`flex flex-col gap-2  rounded-lg shadow p-4 ${
-        todo.status == "done" ? "bg-green-100" : "bg-yellow-100"
-      }`}
-    >
+    <li className={`flex flex-col gap-2 rounded-lg shadow p-4 ${priorityBg[todo.priority]}`}>
       <div className="flex justify-between items-center">
-        <h3 className="text-xl font-bold text-blue-900">{`📝 ${todo.title}`}</h3>
-        <span
-          className={`text-sm font-medium px-3 py-1 rounded-full ${
-            todo.status === "done"
-              ? "bg-green-200 text-green-700"
-              : "bg-yellow-200 text-amber-700"
-          }`}
-        >
-          {todo.status}
+        <h3 className="text-xl font-bold text-blue-900">{todo.title}</h3>
+        <span className={`text-sm font-medium px-3 py-1 rounded-full ${statusBadge[todo.status]}`}>
+          {statusLabel[todo.status]}
         </span>
       </div>
 
@@ -30,16 +40,14 @@ export const Task = ({ todo }: Props) => {
 
       <div className="text-sm text-gray-600 flex flex-wrap gap-4 mt-2">
         <span>
-          <strong>Start:</strong>{" "}
-          {new Date(todo.start_date).toLocaleDateString()}
+          <strong>Start:</strong> {new Date(todo.start_date).toLocaleDateString()}
         </span>
         <span>
           <strong>Due:</strong> {new Date(todo.due_date).toLocaleDateString()}
         </span>
         {todo.completed_date && (
           <span>
-            <strong>Done:</strong>{" "}
-            {new Date(todo.completed_date).toLocaleDateString()}
+            <strong>Done:</strong> {new Date(todo.completed_date).toLocaleDateString()}
           </span>
         )}
         <span>
@@ -49,6 +57,7 @@ export const Task = ({ todo }: Props) => {
 
       <div className="mt-3 flex justify-end gap-2">
         <button
+          onClick={() => editTask(todo)}
           type="button"
           className="px-4 py-2 rounded-lg bg-yellow-400 text-white font-semibold hover:bg-yellow-600 transition"
         >

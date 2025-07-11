@@ -1,4 +1,5 @@
 import { createContext, useState, type ReactNode } from "react";
+import { ToastContainer } from "react-toastify";
 
 type LoginContextType = {
   isLogin: boolean;
@@ -25,6 +26,7 @@ export const LoginProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <LoginContext.Provider value={{ isLogin, login, logOut }}>
+      <ToastContainer/>
       {children}
     </LoginContext.Provider>
   );

@@ -6,7 +6,7 @@ export type TaskTypes = {
   due_date: string;
   completed_date: string | null;
   priority: "low" | "medium" | "high";
-  status: "pending" | "in_progress" | "done";
+  status: "to_do" | "in_progress" | "done";
   created_time: string;
   updated_time: string;
   deleted_time: string | null;
