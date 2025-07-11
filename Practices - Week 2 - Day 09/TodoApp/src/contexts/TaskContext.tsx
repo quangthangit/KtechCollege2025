@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState, type ReactNode } from "react";
 import type { TaskFormData, TaskTypes } from "../types/TaskTypes";
+import { useLogin } from "../hook/useLogin";
 
 type TaskContextTypes = {
   tasks: TaskTypes[];
@@ -15,33 +16,37 @@ export const TaskContext = createContext<TaskContextTypes | undefined>(
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
   const [tasks, setTasks] = useState<TaskTypes[]>([]);
-  const [allTasks, setAllTasks] = useState<TaskTypes[]>([]); 
-
+  const [allTasks, setAllTasks] = useState<TaskTypes[]>([]);
+  const { isLogin } = useLogin();
   const apiUrl = "https://server.aptech.io";
-
-  const fetchTasks = async () => {
-    try {
-      const response = await fetch(apiUrl + "/workspaces/tasks", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      });
-      if (response.ok) {
-        const data = await response.json();
-        setAllTasks(data); 
-        setTasks(data);    
-      } else {
-        console.error("Failed to fetch tasks");
-      }
-    } catch (error) {
-      console.error("Error fetching tasks:", error);
-    }
-  };
-
+  
   useEffect(() => {
+    const fetchTasks = async () => {
+      const token = localStorage.getItem("accessToken");
+      if (!token || !isLogin) return; // đảm bảo phải login
+
+      try {
+        const response = await fetch(apiUrl + "/workspaces/tasks", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setAllTasks(data);
+          setTasks(data);
+        } else {
+          console.error("Failed to fetch tasks");
+        }
+      } catch (error) {
+        console.error("Error fetching tasks:", error);
+      }
+    };
+
     fetchTasks();
-  }, []);
+  }, [isLogin]);
 
   const deleteHandle = (id: number) => {
     const deleteTask = async () => {
@@ -56,7 +61,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
 
         if (response.ok) {
           setTasks((prev) => prev.filter((task) => task.id !== id));
-          setAllTasks((prev) => prev.filter((task) => task.id !== id)); 
+          setAllTasks((prev) => prev.filter((task) => task.id !== id));
         } else {
           console.error("Failed to delete task");
         }
@@ -69,7 +74,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
 
   const searchHandle = (keyword: string) => {
     if (keyword.trim() === "") {
-      setTasks(allTasks); 
+      setTasks(allTasks);
       return;
     }
 
@@ -95,7 +100,7 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
         if (response.ok) {
           const data = await response.json();
           setTasks((prev) => [...prev, data]);
-          setAllTasks((prev) => [...prev, data]); 
+          setAllTasks((prev) => [...prev, data]);
           console.log("Task created:", data);
         } else {
           console.error("Failed to create task");
