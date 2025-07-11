@@ -13,12 +13,12 @@ export const Header = () => {
           to="/"
           className="text-3xl font-extrabold tracking-wide hover:text-blue-200 transition"
         >
-          GroviaTasks
+          Task Manager
         </Link>
 
         <div className="ml-auto hidden md:flex items-center space-x-6 text-base font-medium">
           <Link to="/" className="hover:text-blue-200 transition">
-            My Tasks
+            Hi {localStorage.getItem("email")} !
           </Link>
           {isLogin ? (
             <button
@@ -56,7 +56,7 @@ export const Header = () => {
             onClick={() => setMenuOpen(false)}
             className="hover:text-blue-200 transition"
           >
-            MyTasks
+            Hi {localStorage.getItem("email")} !
           </Link>
           {isLogin ? (
             <button

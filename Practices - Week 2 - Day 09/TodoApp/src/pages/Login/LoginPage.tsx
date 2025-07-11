@@ -32,14 +32,11 @@ export const LoginPage = () => {
         }),
       });
 
-      const result = await response.json();
+      const result = await response.json()
 
       if (response.ok) {
+        login(result.access_token,result.loggedInUser.email);
         console.log("Login success:", result);
-
-        login(result.access_token);
-        console.log(localStorage.getItem("accessToken"));
-
         navigate("/");
       } else {
         toast.error("Đăng nhập thất bại");
@@ -53,7 +50,7 @@ export const LoginPage = () => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row font-sans">
       <ToastContainer />
-      <LeftColumn/>
+      <LeftColumn />
       <div className="w-full md:w-1/2 bg-white flex flex-col justify-center px-6 md:px-12 py-10">
         <div className="max-w-md w-full mx-auto px-4 md:px-0 space-y-6">
           <p className="font-bold text-blue-300 text-4xl md:text-5xl w-fit mb-10 md:mb-[100px]">

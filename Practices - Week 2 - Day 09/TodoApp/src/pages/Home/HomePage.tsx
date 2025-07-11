@@ -64,7 +64,7 @@ export const HomePage = () => {
       <div className="min-h-screen flex flex-col bg-gray-100 transition-colors duration-300">
         <div className="w-full h-full bg-white/90 rounded-none shadow-none p-6 flex-1">
           <div className="text-left font-bold text-2xl text-blue-700 mb-4">
-            Quản lý công việc
+            List task manager
           </div>
           <div
             id="todoForm"
