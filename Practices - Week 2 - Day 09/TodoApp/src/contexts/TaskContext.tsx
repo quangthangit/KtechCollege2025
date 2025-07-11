@@ -4,7 +4,7 @@ import type { TaskFormData, TaskTypes } from "../types/TaskTypes";
 type TaskContextTypes = {
   tasks: TaskTypes[];
   deleteHandle: (id: number) => void;
-  searchHandle: (id: number) => void;
+  searchHandle: (keyword: string) => void;
   createHandle: (TaskFormData: TaskFormData) => void;
   editHandle: (updatedTask: TaskTypes) => void;
 };
@@ -15,28 +15,31 @@ export const TaskContext = createContext<TaskContextTypes | undefined>(
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
   const [tasks, setTasks] = useState<TaskTypes[]>([]);
+  const [allTasks, setAllTasks] = useState<TaskTypes[]>([]); 
 
   const apiUrl = "https://server.aptech.io";
-  useEffect(() => {
-    const fetchTasks = async () => {
-      try {
-        const response = await fetch(apiUrl + "/workspaces/tasks", {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setTasks(data);
-        } else {
-          console.error("Failed to fetch tasks");
-        }
-      } catch (error) {
-        console.error("Error fetching tasks:", error);
-      }
-    };
 
+  const fetchTasks = async () => {
+    try {
+      const response = await fetch(apiUrl + "/workspaces/tasks", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setAllTasks(data); 
+        setTasks(data);    
+      } else {
+        console.error("Failed to fetch tasks");
+      }
+    } catch (error) {
+      console.error("Error fetching tasks:", error);
+    }
+  };
+
+  useEffect(() => {
     fetchTasks();
   }, []);
 
@@ -53,18 +56,28 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
 
         if (response.ok) {
           setTasks((prev) => prev.filter((task) => task.id !== id));
+          setAllTasks((prev) => prev.filter((task) => task.id !== id)); 
         } else {
           console.error("Failed to delete task");
         }
       } catch (error) {
-        console.error("Error delete task:", error);
+        console.error("Error deleting task:", error);
       }
     };
     deleteTask();
   };
 
-  const searchHandle = (id: number) => {
-    setTasks((prev) => prev.filter((task) => task.id == id));
+  const searchHandle = (keyword: string) => {
+    if (keyword.trim() === "") {
+      setTasks(allTasks); 
+      return;
+    }
+
+    const filtered = allTasks.filter((task) =>
+      task.title.toLowerCase().includes(keyword.toLowerCase())
+    );
+
+    setTasks(filtered);
   };
 
   const createHandle = (newTask: TaskFormData) => {
@@ -81,8 +94,8 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
 
         if (response.ok) {
           const data = await response.json();
-
           setTasks((prev) => [...prev, data]);
+          setAllTasks((prev) => [...prev, data]); 
           console.log("Task created:", data);
         } else {
           console.error("Failed to create task");
@@ -97,6 +110,9 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
 
   const editHandle = (updatedTask: TaskTypes) => {
     setTasks((prev) =>
+      prev.map((task) => (task.id === updatedTask.id ? updatedTask : task))
+    );
+    setAllTasks((prev) =>
       prev.map((task) => (task.id === updatedTask.id ? updatedTask : task))
     );
   };

@@ -19,6 +19,7 @@ export const FormAddTask = ({ onSubmit, onCancel }: Props) => {
       start_date: "",
       due_date: "",
       description: "",
+      priority: ""
     },
   });
 
@@ -96,6 +97,20 @@ export const FormAddTask = ({ onSubmit, onCancel }: Props) => {
           <option value="to_do">To Do</option>
           <option value="in_progress">In Progress</option>
           <option value="done">Done</option>
+        </select>
+      </div>
+
+            <div>
+        <label className="text-sm font-medium text-blue-700 block mb-1">
+          Priority
+        </label>
+        <select
+          {...register("priority")}
+          className="w-full p-3 border border-blue-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">high</option>
         </select>
       </div>
 

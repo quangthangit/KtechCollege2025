@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { FormAddTask } from "../../components/FormAddTask";
 export const HomePage = () => {
   const { isLogin } = useLogin();
-  const { tasks, createHandle } = useTask();
+  const { tasks, createHandle, searchHandle } = useTask();
   const navigate = useNavigate();
   useEffect(() => {
     if (!isLogin) {
@@ -35,6 +35,7 @@ export const HomePage = () => {
           </div>
           <div id="todoForm" className="flex flex-col sm:flex-row gap-3 mb-4">
             <input
+              onChange={(e) => searchHandle(e.currentTarget.value)}
               id="todoInput"
               type="text"
               placeholder="Enter task id"

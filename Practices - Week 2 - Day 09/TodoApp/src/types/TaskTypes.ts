@@ -25,4 +25,5 @@ export type TaskFormData = {
   start_date: string;
   due_date: string;
   description: string;
+  priority : string;
 };
