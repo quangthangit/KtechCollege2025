@@ -1,22 +1,19 @@
-// app/layout.tsx or app/layout.js
-import Header from '@/components/Header';
-import './globals.css';
-import { ReactNode } from 'react';
-import Footer from '@/components/Footer';
+import "./globals.css";
+import { ReactNode } from "react";
+import Header from "../components/Header";
 
 export const metadata = {
-  title: 'My App',
-  description: 'Build modern apps with ease.',
+  title: "My App",
+  description: "Build modern apps with ease.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <Header/>
+    <html lang="en" className="mdl-js">
       <body>
-        {children}
+        <Header />
+        <main>{children}</main>
       </body>
-      <Footer/>
     </html>
   );
 }
