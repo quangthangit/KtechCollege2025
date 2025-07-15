@@ -6,7 +6,7 @@ export const revalidate = 10;
 
 const apiUrl = process.env.API_URL || "https://server.aptech.io";
 
-async function getTask(id: string): Promise<TaskTypes | null> {
+async function generateStaticParams(id: string): Promise<TaskTypes | null> {
   try {
     const res = await fetch(`${apiUrl}/workspaces/tasks/${id}`, {
       headers: {
@@ -39,7 +39,7 @@ export default async function TaskDetailPage({
   const { id } = await params;
 
   try {
-    const task = await getTask(id);
+    const task = await generateStaticParams(id);
 
     if (!task) {
       notFound();
