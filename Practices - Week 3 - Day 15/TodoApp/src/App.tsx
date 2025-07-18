@@ -1,21 +1,27 @@
+import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import { TaskProvider } from "./contexts/TaskContext";
-import { MainLayout } from "./layout/MainLayout";
-import { HomePage } from "./pages/Home/HomePage";
-import { LoginPage } from "./pages/Login/LoginPage";
-
-function App() {
+import Layout from "@/components/Layout/Layout";
+import AllTasks from "@/pages/AllTasks/Page";
+import AddTask from "@/pages/AddTasks/Page";
+import NoMatch from "@/pages/NoMatch/Page";
+import Login from "./pages/Login";
+import RequireAuth from "./components/RequireAuth";
+const App: FC = () => {
   return (
-    <TaskProvider>
+    <>
       <Routes>
-        <Route element={<MainLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route element={<RequireAuth><Layout /></RequireAuth>}>
+          {/* <Route index element={<Home />} /> */}
+          <Route path="/" element={<AllTasks />} />
+          <Route path="/all-tasks" element={<AllTasks />} />
+          <Route path="/add-task" element={<AddTask />} />
+          <Route path="/settings" element={<AllTasks />} />
+          <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
-    </TaskProvider>
+    </>
   );
-}
+};
 
 export default App;
